@@ -57,7 +57,7 @@ def setCookie():
 def getCookie():
     return request.cookies
 
-# Set All Session
+# Set Session
 @app.route("/session")
 def setSession():
     session["user"] = str(random.random())
@@ -66,7 +66,7 @@ def setSession():
         <a href='/getSession'>Show Sessions</a>
     '''
 
-# Get All Sessions
+# Get Session
 @app.route("/getSession")
 def getSession():
     return session["user"]
