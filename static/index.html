@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Demo</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h1>Hello Flask</h1>
+        <hr/>
+
+        <p>Template Engines</p>
+        <a href="/template">Click me access template page</a>
+        <hr/>
+
+        <p>Json Api</p>
+        <a href="/json">Click me access JSON API</a>
+        <hr/>
+
+        <p>Redirect</p>
+        <a href="/redirect">Click me redirect to Python Standard Library</a>
+        <hr/>
+
+        <p>QueryStrigTest</p>
+        <a href="/querystring?id=1234&name=哈哈哈">Click me set query string</a>
+        <hr/>
+
+        <form method="POST" action="/form">
+            <p>FormTest</p>
+            <input type="text" name="name" />
+            <input type="submit" value="submit"/>
+        </form>
+        <hr/>
+
+        <p>CookieTest</p>
+        <a href="/cookie">Click me set cookie</a>
+        <hr/>
+
+        <p>SessionTest</p>
+        <a href="/session">Click me set Session</a>
+
+    </div>
+</body>
+</html>
