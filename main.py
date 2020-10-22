@@ -39,6 +39,13 @@ def queryString():
 def form():
     return request.form
 
+# FormFile
+@app.route("/formfile", methods=["post"])
+def formFile():
+    tempFile = request.files["file"]
+    tempFile.save("./temp.txt")
+    return "上传成功"
+
 # Set Cookie
 @app.route("/cookie")
 def setCookie():
@@ -70,3 +77,5 @@ def setSession():
 @app.route("/getSession")
 def getSession():
     return session["user"]
+
+app.run()
