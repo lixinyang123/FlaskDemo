@@ -1,4 +1,5 @@
 from flask import *
+from urllib.request import *
 import os
 import random
 
@@ -9,6 +10,11 @@ app.secret_key = os.urandom(24)
 @app.route("/")
 def index():
     return send_file("./static/index.html","text/html")
+
+# Response content
+@app.route("/content")
+def content():
+    return "Hello Flask"
 
 # Template Engines
 @app.route("/template")
@@ -40,6 +46,7 @@ def form():
     return request.form
 
 # FormFile
+# enctype="multipart/form-data"
 @app.route("/formfile", methods=["post"])
 def formFile():
     tempFile = request.files["file"]
@@ -77,5 +84,11 @@ def setSession():
 @app.route("/getSession")
 def getSession():
     return session["user"]
+
+# Proxy
+@app.route("/proxy")
+def proxy():
+    # return urlopen("https://www.baidu.com")
+    return urlopen("https://www.baidu.com").read().decode("utf-8")
 
 app.run()
